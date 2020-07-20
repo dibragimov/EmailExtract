@@ -1,0 +1,27 @@
+version: "3"
+services:
+  embedding:
+    build: '../EmbeddingService'
+    container_name: embedding
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "7005:7005"
+    networks:
+      - default
+  reply_extractor_service:
+    build: '../ReplyNNService'
+    container_name: reply_extractor
+    deploy:
+      restart_policy:
+        condition: on-failure
+    depends_on:
+      - embedding
+    links:
+      - embedding
+    ports:
+      - "7010:5000"
+    networks:
+      - default
+

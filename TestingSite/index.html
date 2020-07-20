@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Test App</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
+    <script src="scripts_1.js"></script>
+  </head>
+
+  <body>
+    
+    <div id="root" style="display:inline-block">
+      <label for="yes_sign">Use AI</label>
+      <input type="radio" name="use_nn" id="use_nn" value="True">
+      <label for="nosign">Use Heuristics</label>
+      <input type="radio" name="use_nn" id="use_heur" value="False"><br>
+
+      <textarea id="emailtext" name="emailtext" rows="30" cols="200"></textarea>
+      <br/>
+      <label for="yes_sign">Include Signature</label>
+      <input type="radio" name="sign" id="yes_sign" value="Include"><br>
+      <label for="nosign">Don't Include Signature</label>
+      <input type="radio" name="sign" id="no_sign" value="No Signature"><br>
+      <button onclick="parse()">Extract Last Email</button> 
+      <p id="reply"></p>
+      <textarea id="replytext" rows="15" cols="200"></textarea>
+    </div>
+  </body>
+</html>

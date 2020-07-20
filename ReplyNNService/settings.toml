@@ -1,0 +1,5 @@
+
+[default]
+EMBEDDING_SERVICE = "http://embedding:7005/"
+MODEL_PATH = "/opt/ReplyNNService/resources/model_sv_2020-07-03.pth"
+TOP_K = 3
